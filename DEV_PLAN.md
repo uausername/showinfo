@@ -15,13 +15,13 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 ## Task Stubs
 
 ### South Park API Client
-- [ ] Implement South Park API client
+- [x] Implement South Park API client
   - Create `src/api/southPark.ts` with functions for characters, episodes, locations, and quotes.
   - Map REST endpoints to typed interfaces: `/characters/:id`, `/episodes`, `/quotes`.
   - Include basic caching and error handling for rate-limits or missing data.
 
 ### Bob's Burgers API Client
-- [ ] Implement Bob's Burgers API client
+- [x] Implement Bob's Burgers API client
   - Add `src/api/bobsBurgers.ts` that wraps endpoints such as `/episodes`, `/quotes/random`, `/characters/:id`.
   - Provide pagination support and query-by-name filtering.
   - Expose normalized models (Episode, Character, Quote) compatible with other shows.
@@ -51,4 +51,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 
 ## Completed Work
 - [x] Initial project setup.
+- [x] Implemented South Park API client with caching and error handling.
+- [x] Added Bob's Burgers API client with pagination and name filtering.
 
