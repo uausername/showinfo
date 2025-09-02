@@ -1,2 +1,2 @@
 # showinfo
-showinfo is ineractive infograhics buider that fetches data through APIs
+showinfo is ineractive infograhics builder that fetches data through APIs
