@@ -8,6 +8,7 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 ## Current Goals
 - [ ] API integration layer for South Park and Bob's Burgers with graceful handling when no API exists (e.g., Family Guy).
 - [ ] Data normalization and caching to unify heterogeneous responses and reduce network calls.
+- [ ] Web interface for browsing shows and launching visualizations.
 - [ ] Visualization frontend with interactive charts and controls for selecting show, endpoint, and chart type.
 - [ ] Deployment as a single-page app and planning for future show integrations or fallback strategies.
 
@@ -30,6 +31,11 @@ The project aims to build showinfo, an interactive infographic builder that fetc
   - Define shared interfaces (`Show`, `Episode`, `Character`, `Quote`) under `src/models/`.
   - Implement conversion functions mapping South Park and Bob's Burgers responses to these interfaces.
   - Store normalized data in a lightweight cache or state management layer.
+
+### Web Interface
+- [ ] Scaffold a React-based web app with navigation for home and show-specific pages.
+  - Fetch data through API clients and display basic lists for shows, episodes, and characters.
+  - Apply responsive styling to ensure usability across devices.
 
 ### Interactive Visualization Components
 - [ ] Build infographic components
