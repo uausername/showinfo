@@ -8,22 +8,24 @@
 ├── package-lock.json
 ├── package.json
 ├── src
-│   ├── api
-│   │   ├── bobsBurgers.ts
-│   │   └── southPark.ts
-│   ├── components
-│   │   ├── App.tsx
-│   │   ├── Home.tsx
-│   │   └── ShowPage.tsx
-│   ├── index.tsx
-│   └── models
-│       ├── index.ts
-│       ├── normalizers.ts
-│       └── store.ts
+│   ├── api
+│   │   ├── bobsBurgers.ts
+│   │   └── southPark.ts
+│   ├── components
+│   │   ├── App.tsx
+│   │   ├── Home.tsx
+│   │   ├── ShowPage.tsx
+│   │   └── ShowStats.tsx
+│   ├── index.tsx
+│   └── models
+│       ├── index.ts
+│       ├── normalizers.ts
+│       └── store.ts
 ├── test
-│   ├── bobsBurgers.test.ts
-│   ├── models.test.ts
-│   └── southPark.test.ts
+│   ├── bobsBurgers.test.ts
+│   ├── models.test.ts
+│   └── southPark.test.ts
 └── tsconfig.json
 
-6 directories, 21 files
+6 directories, 22 files
+
