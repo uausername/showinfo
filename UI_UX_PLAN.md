@@ -5,7 +5,7 @@ The Showinfo app is an interactive infographic builder that fetches data about T
 
 ## Current Layout
 - **Home**: lists available shows and links to their pages.
-- **Show Page**: displays episode and character lists for supported shows, an interactive chart with selectable datasets and chart types, and informs users when no API is available (e.g., Family Guy).
+- **Show Page**: displays episode and character lists for supported shows, an interactive chart with selectable datasets and chart types, and when no API is available (e.g., Family Guy) it offers links to IMDb and TMDb while logging the request.
 
 ## Visual Libraries
 To build rich infographics, the app will leverage JavaScript visualization libraries highlighted in `Sourses_info.md`:
@@ -19,4 +19,4 @@ To build rich infographics, the app will leverage JavaScript visualization libra
 
 ## Next Steps
 - Apply basic styling and layout improvements.
-- Investigate alternative data sources or uploads for shows lacking public APIs.
+- Explore manual data upload options for shows lacking public APIs.
