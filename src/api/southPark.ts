@@ -86,6 +86,10 @@ export async function getCharacter(id: number): Promise<Character> {
   return request<Character>(`/characters/${id}`);
 }
 
+export async function getCharacters(): Promise<Character[]> {
+  return request<Character[]>(`/characters`);
+}
+
 export async function getEpisodes(): Promise<Episode[]> {
   return request<Episode[]>('/episodes');
 }

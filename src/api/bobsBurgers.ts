@@ -68,6 +68,14 @@ export async function getCharacter(id: number): Promise<Character> {
   return request<Character>(`/characters/${id}`);
 }
 
+export async function getCharacters(page = 1, limit = 25): Promise<Character[]> {
+  const params = new URLSearchParams({
+    limit: String(limit),
+    skip: String((page - 1) * limit)
+  });
+  return request<Character[]>(`/characters?${params.toString()}`);
+}
+
 interface SearchOptions {
   name?: string;
   page?: number;

@@ -19,6 +19,24 @@ describe("Bob's Burgers API", () => {
     expect((global.fetch as jest.Mock).mock.calls.length).toBe(1);
   });
 
+  test('fetches characters list with pagination and caches result', async () => {
+    const mockCharacters = [{ id: 1, name: 'Bob Belcher' }];
+    (global as any).fetch = jest.fn().mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      json: async () => mockCharacters
+    });
+    const { getCharacters } = await import('../src/api/bobsBurgers');
+    const first = await getCharacters(2, 5);
+    expect(first).toEqual(mockCharacters);
+    expect((global.fetch as jest.Mock).mock.calls[0][0]).toBe(
+      'https://bobsburgers-api.herokuapp.com/characters?limit=5&skip=5'
+    );
+    const second = await getCharacters(2, 5);
+    expect(second).toEqual(mockCharacters);
+    expect((global.fetch as jest.Mock).mock.calls.length).toBe(1);
+  });
+
   test('builds search query with pagination and name filter', async () => {
     (global as any).fetch = jest.fn().mockResolvedValueOnce({
       ok: true,
