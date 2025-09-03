@@ -17,12 +17,15 @@ import {
 } from "../models/normalizers";
 import { Episode, Character } from "../models";
 import ShowStats from "./ShowStats";
+import { logMissingApi } from "../utils/missingApiLogger";
 
 const ShowPage: React.FC = () => {
   const { name } = useParams<{ name: string }>();
   const [episodes, setEpisodes] = useState<Episode[] | null>(null);
   const [characters, setCharacters] = useState<Character[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [alternativeSources, setAlternativeSources] =
+    useState<{ label: string; url: string }[] | null>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +46,18 @@ const ShowPage: React.FC = () => {
           setEpisodes(eps.map(normalizeBobsBurgersEpisode));
           setCharacters(chars.map(normalizeBobsBurgersCharacter));
         } else if (name === "family-guy") {
+          logMissingApi(name);
           setError("No public API available for Family Guy.");
+          setAlternativeSources([
+            {
+              label: "IMDb",
+              url: "https://www.imdb.com/title/tt0182576/"
+            },
+            {
+              label: "TMDb",
+              url: "https://www.themoviedb.org/tv/1434-family-guy"
+            }
+          ]);
         } else {
           setError("Unknown show.");
         }
@@ -60,6 +74,20 @@ const ShowPage: React.FC = () => {
       <div>
         <h2>{name}</h2>
         <p>{error}</p>
+        {alternativeSources && (
+          <p>
+            Try {""}
+            {alternativeSources.map((src, idx) => (
+              <span key={src.url}>
+                <a href={src.url} target="_blank" rel="noopener noreferrer">
+                  {src.label}
+                </a>
+                {idx < alternativeSources.length - 1 ? " or " : ""}
+              </span>
+            ))}
+            {" "}for more information.
+          </p>
+        )}
       </div>
     );
   }

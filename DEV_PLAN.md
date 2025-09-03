@@ -46,10 +46,10 @@ The project aims to build showinfo, an interactive infographic builder that fetc
   - [x] Add controls for selecting datasets and chart types; ensure responsive layout.
 
 ### Handling Missing Family Guy API
-- [ ] Gracefully handle missing data sources
+- [x] Gracefully handle missing data sources
   - [x] Detect when a show lacks an API (e.g., Family Guy) and display an informative message.
-  - Offer links to alternative sources (IMDb, TMDb) or allow manual data uploads.
-  - Log unserved requests for potential future API integrations.
+  - [x] Offer links to alternative sources (IMDb, TMDb) or allow manual data uploads.
+  - [x] Log unserved requests for potential future API integrations.
 
 ## Completed Work
 - [x] Initial project setup.
@@ -61,5 +61,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Added character listings to show pages.
 - [x] Introduced Chart.js bar chart for show statistics.
 - [x] Added dataset and chart type controls with responsive layout.
+- [x] Added logging and alternative source links for shows without APIs.
 
 

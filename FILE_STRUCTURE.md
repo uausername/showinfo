@@ -18,15 +18,18 @@
 │   │   ├── ShowPage.tsx
 │   │   └── ShowStats.tsx
 │   ├── index.tsx
-│   └── models
-│       ├── index.ts
-│       ├── normalizers.ts
-│       └── store.ts
+│   ├── models
+│   │   ├── index.ts
+│   │   ├── normalizers.ts
+│   │   └── store.ts
+│   └── utils
+│       └── missingApiLogger.ts
 ├── test
 │   ├── bobsBurgers.test.ts
+│   ├── missingApiLogger.test.ts
 │   ├── models.test.ts
 │   └── southPark.test.ts
 └── tsconfig.json
 
-6 directories, 22 files
+7 directories, 24 files
 
