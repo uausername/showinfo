@@ -1,29 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getEpisodes as getSouthParkEpisodes } from "../api/southPark";
-import { getEpisodes as getBobsBurgersEpisodes } from "../api/bobsBurgers";
+import {
+  getEpisodes as getSouthParkEpisodes,
+  getCharacters as getSouthParkCharacters
+} from "../api/southPark";
+import {
+  getEpisodes as getBobsBurgersEpisodes,
+  getCharacters as getBobsBurgersCharacters
+} from "../api/bobsBurgers";
 import {
   normalizeSouthParkEpisode,
-  normalizeBobsBurgersEpisode
+  normalizeBobsBurgersEpisode,
+  normalizeSouthParkCharacter,
+  normalizeBobsBurgersCharacter
 } from "../models/normalizers";
-import { Episode } from "../models";
+import { Episode, Character } from "../models";
 
 const ShowPage: React.FC = () => {
   const { name } = useParams<{ name: string }>();
   const [episodes, setEpisodes] = useState<Episode[] | null>(null);
+  const [characters, setCharacters] = useState<Character[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchEpisodes() {
+    async function fetchData() {
       if (!name) return;
       try {
         if (name === "south-park") {
-          const data = await getSouthParkEpisodes();
-          setEpisodes(data.map(normalizeSouthParkEpisode));
+          const [eps, chars] = await Promise.all([
+            getSouthParkEpisodes(),
+            getSouthParkCharacters()
+          ]);
+          setEpisodes(eps.map(normalizeSouthParkEpisode));
+          setCharacters(chars.map(normalizeSouthParkCharacter));
         } else if (name === "bobs-burgers") {
-          const data = await getBobsBurgersEpisodes();
-          setEpisodes(data.map(normalizeBobsBurgersEpisode));
+          const [eps, chars] = await Promise.all([
+            getBobsBurgersEpisodes(),
+            getBobsBurgersCharacters()
+          ]);
+          setEpisodes(eps.map(normalizeBobsBurgersEpisode));
+          setCharacters(chars.map(normalizeBobsBurgersCharacter));
         } else if (name === "family-guy") {
           setError("No public API available for Family Guy.");
         } else {
@@ -34,7 +51,7 @@ const ShowPage: React.FC = () => {
       }
     }
 
-    fetchEpisodes();
+    fetchData();
   }, [name]);
 
   if (error) {
@@ -49,6 +66,7 @@ const ShowPage: React.FC = () => {
   return (
     <div>
       <h2>{name}</h2>
+      <h3>Episodes</h3>
       {episodes ? (
         <ul>
           {episodes.map((ep) => (
@@ -57,6 +75,16 @@ const ShowPage: React.FC = () => {
         </ul>
       ) : (
         <p>Loading episodes...</p>
+      )}
+      <h3>Characters</h3>
+      {characters ? (
+        <ul>
+          {characters.map((ch) => (
+            <li key={ch.id}>{ch.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading characters...</p>
       )}
     </div>
   );
