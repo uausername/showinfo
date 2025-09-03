@@ -29,6 +29,18 @@ showinfo is an interactive infographic builder that fetches TV-show data through
 
 See [DEV_PLAN.md](DEV_PLAN.md) for the full roadmap.
 
+## Run The App (MVP)
+1. Install dependencies: `npm install`
+2. Start the dev server: `npm run dev`
+3. Open the URL shown in the terminal (usually `http://localhost:5173`).
+
 ## Running Tests
 1. Install dependencies: `npm install`
 2. Run unit tests: `npm test`
+
+## Deployment
+- Build the app: `npm run build`
+- Preview locally: `npm run preview`
+- Static hosting options:
+  - Vercel/Netlify: import the repo, set build command `npm run build` and output dir `dist`.
+  - GitHub Pages: push the `dist` folder to a `gh-pages` branch or use an action that deploys `dist` after build.

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Bar, Pie } from "react-chartjs-2";
+import { Bar, Pie, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
   ArcElement,
+  LineElement,
+  PointElement,
   Title,
   Tooltip,
   Legend
@@ -17,6 +19,8 @@ ChartJS.register(
   LinearScale,
   BarElement,
   ArcElement,
+  LineElement,
+  PointElement,
   Title,
   Tooltip,
   Legend
@@ -31,7 +35,7 @@ const ShowStats: React.FC<Props> = ({ episodes, characters }) => {
   const [dataset, setDataset] = useState<"counts" | "episodesPerSeason">(
     "counts"
   );
-  const [chartType, setChartType] = useState<"bar" | "pie">("bar");
+  const [chartType, setChartType] = useState<"bar" | "pie" | "line">("bar");
 
   if (!episodes || !characters) {
     return null;
@@ -73,10 +77,11 @@ const ShowStats: React.FC<Props> = ({ episodes, characters }) => {
   };
 
   const data = buildData();
+  const options = { responsive: true, maintainAspectRatio: false } as const;
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+    <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+      <div className="controls">
         <label>
           Dataset:
           <select
@@ -95,10 +100,15 @@ const ShowStats: React.FC<Props> = ({ episodes, characters }) => {
           >
             <option value="bar">Bar</option>
             <option value="pie">Pie</option>
+            <option value="line">Line</option>
           </select>
         </label>
       </div>
-      {chartType === "bar" ? <Bar data={data} /> : <Pie data={data} />}
+      <div className="chart-container">
+        {chartType === "bar" && <Bar data={data} options={options} />}
+        {chartType === "pie" && <Pie data={data} options={options} />}
+        {chartType === "line" && <Line data={data} options={options} />}
+      </div>
     </div>
   );
 };

@@ -6,11 +6,11 @@ This document outlines the development goals and progress for the `showinfo` pro
 The project aims to build showinfo, an interactive infographic builder that fetches TV-show data through public APIs. Two shows—South Park and Bob's Burgers—provide rich datasets via REST APIs, while Family Guy lacks a comparable public endpoint. Visualization will leverage libraries such as D3.js, Chart.js, and Plotly.js for dynamic charts and graphs.
 
 ## Current Goals
-- [ ] API integration layer for South Park and Bob's Burgers with graceful handling when no API exists (e.g., Family Guy).
-- [ ] Data normalization and caching to unify heterogeneous responses and reduce network calls.
-- [ ] Web interface for browsing shows and launching visualizations.
-- [ ] Visualization frontend with interactive charts and controls for selecting show, endpoint, and chart type.
-- [ ] Deployment as a single-page app and planning for future show integrations or fallback strategies.
+- [ ] Apply responsive styling across pages (refine layout, spacing, mobile controls)
+- [ ] Improve loading and error states (skeletons, retries, offline)
+- [ ] Add more chart presets (lines/stacked bars) and legend toggles
+- [ ] Explore data sources for shows without APIs (Family Guy: TMDb/IMDb bridge)
+- [ ] Prepare basic deployment (static hosting) instructions
 
 ## Task Stubs
 
@@ -38,6 +38,8 @@ The project aims to build showinfo, an interactive infographic builder that fetc
   - [x] Display episode lists for South Park and Bob's Burgers.
   - [x] Display character lists for each show.
 - [ ] Apply responsive styling to ensure usability across devices.
+  - [x] Add minimal dark theme and layout containers (MVP via `src/style.css`).
+  - [ ] Tune spacing/typography; add mobile-friendly chart container sizing.
 
 ### Interactive Visualization Components
 - [ ] Build infographic components
@@ -62,5 +64,14 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Introduced Chart.js bar chart for show statistics.
 - [x] Added dataset and chart type controls with responsive layout.
 - [x] Added logging and alternative source links for shows without APIs.
+- [x] Added Vite dev server for fast local preview and build (`index.html`, `vite.config.ts`).
+- [x] Updated README with quick run instructions.
+
+## Next Steps (Short Term)
+1. Refine responsive styling (mobile-first container widths; chart canvas sizing).
+2. Add basic loading skeletons for episodes/characters lists and the chart.
+3. Add error banners with retry for transient failures (429, network).
+4. Add one more chart option (e.g., line chart of episodes per season).
+5. Document simple static deployment (Vercel/Netlify/GitHub Pages) using Vite build.
 
 

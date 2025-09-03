@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => (
-  <div>
+  <div className="card">
     <h1>Showinfo</h1>
     <p>Select a show to explore.</p>
     <ul>

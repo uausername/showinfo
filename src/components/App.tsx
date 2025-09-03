@@ -8,10 +8,12 @@ const App: React.FC = () => (
     <nav>
       <Link to="/">Home</Link>
     </nav>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/show/:name" element={<ShowPage />} />
-    </Routes>
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/show/:name" element={<ShowPage />} />
+      </Routes>
+    </div>
   </Router>
 );
 
