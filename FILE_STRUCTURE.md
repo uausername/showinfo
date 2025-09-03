@@ -4,6 +4,7 @@
 ├── DEV_PLAN.md
 ├── FILE_STRUCTURE.md
 ├── Sourses_info.md
+├── UI_UX_PLAN.md
 ├── package-lock.json
 ├── package.json
 ├── src
@@ -25,4 +26,4 @@
 │   └── southPark.test.ts
 └── tsconfig.json
 
-6 directories, 20 files
+6 directories, 21 files
