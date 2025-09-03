@@ -16,6 +16,7 @@ import {
   normalizeBobsBurgersCharacter
 } from "../models/normalizers";
 import { Episode, Character } from "../models";
+import ShowStats from "./ShowStats";
 
 const ShowPage: React.FC = () => {
   const { name } = useParams<{ name: string }>();
@@ -66,6 +67,7 @@ const ShowPage: React.FC = () => {
   return (
     <div>
       <h2>{name}</h2>
+      <ShowStats episodes={episodes} characters={characters} />
       <h3>Episodes</h3>
       {episodes ? (
         <ul>
