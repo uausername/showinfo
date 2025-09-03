@@ -35,6 +35,8 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 ### Web Interface
 - [x] Scaffold a React-based web app with navigation for home and show-specific pages.
 - [ ] Fetch data through API clients and display basic lists for shows, episodes, and characters.
+  - [x] Display episode lists for South Park and Bob's Burgers.
+  - [ ] Display character lists for each show.
 - [ ] Apply responsive styling to ensure usability across devices.
 
 ### Interactive Visualization Components
@@ -45,7 +47,7 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 
 ### Handling Missing Family Guy API
 - [ ] Gracefully handle missing data sources
-  - Detect when a show lacks an API (e.g., Family Guy) and display an informative message.
+  - [x] Detect when a show lacks an API (e.g., Family Guy) and display an informative message.
   - Offer links to alternative sources (IMDb, TMDb) or allow manual data uploads.
   - Log unserved requests for potential future API integrations.
 
@@ -55,5 +57,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Added Bob's Burgers API client with pagination and name filtering.
 - [x] Defined unified data model with normalization helpers and in-memory store.
 - [x] Scaffolding for React-based web interface with basic navigation.
+- [x] Added episode listings to show pages and handled missing API for Family Guy.
 
 
