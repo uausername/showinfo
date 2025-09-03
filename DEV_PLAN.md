@@ -27,10 +27,10 @@ The project aims to build showinfo, an interactive infographic builder that fetc
   - Expose normalized models (Episode, Character, Quote) compatible with other shows.
 
 ### Unified Data Model
-- [ ] Normalize show data
-  - Define shared interfaces (`Show`, `Episode`, `Character`, `Quote`) under `src/models/`.
-  - Implement conversion functions mapping South Park and Bob's Burgers responses to these interfaces.
-  - Store normalized data in a lightweight cache or state management layer.
+- [x] Normalize show data
+  - [x] Define shared interfaces (`Show`, `Episode`, `Character`, `Quote`) under `src/models/`.
+  - [x] Implement conversion functions mapping South Park and Bob's Burgers responses to these interfaces.
+  - [x] Store normalized data in a lightweight cache or state management layer.
 
 ### Web Interface
 - [ ] Scaffold a React-based web app with navigation for home and show-specific pages.
@@ -53,4 +53,7 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Initial project setup.
 - [x] Implemented South Park API client with caching and error handling.
 - [x] Added Bob's Burgers API client with pagination and name filtering.
+- [x] Defined unified data model with normalization helpers and in-memory store.
+=======
+
 
