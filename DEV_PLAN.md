@@ -33,9 +33,9 @@ The project aims to build showinfo, an interactive infographic builder that fetc
   - [x] Store normalized data in a lightweight cache or state management layer.
 
 ### Web Interface
-- [ ] Scaffold a React-based web app with navigation for home and show-specific pages.
-  - Fetch data through API clients and display basic lists for shows, episodes, and characters.
-  - Apply responsive styling to ensure usability across devices.
+- [x] Scaffold a React-based web app with navigation for home and show-specific pages.
+- [ ] Fetch data through API clients and display basic lists for shows, episodes, and characters.
+- [ ] Apply responsive styling to ensure usability across devices.
 
 ### Interactive Visualization Components
 - [ ] Build infographic components
@@ -54,6 +54,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Implemented South Park API client with caching and error handling.
 - [x] Added Bob's Burgers API client with pagination and name filtering.
 - [x] Defined unified data model with normalization helpers and in-memory store.
-=======
+- [x] Scaffolding for React-based web interface with basic navigation.
 
 
