@@ -54,4 +54,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Implemented South Park API client with caching and error handling.
 - [x] Added Bob's Burgers API client with pagination and name filtering.
 - [x] Defined unified data model with normalization helpers and in-memory store.
+=======
+
 
