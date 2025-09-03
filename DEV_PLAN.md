@@ -43,7 +43,7 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [ ] Build infographic components
   - [x] Set up a React frontend in `src/components/` with a router for different shows.
   - [x] Integrate Chart.js for basic show statistics visualization.
-  - [ ] Add controls for selecting datasets and chart types; ensure responsive layout.
+  - [x] Add controls for selecting datasets and chart types; ensure responsive layout.
 
 ### Handling Missing Family Guy API
 - [ ] Gracefully handle missing data sources
@@ -60,5 +60,6 @@ The project aims to build showinfo, an interactive infographic builder that fetc
 - [x] Added episode listings to show pages and handled missing API for Family Guy.
 - [x] Added character listings to show pages.
 - [x] Introduced Chart.js bar chart for show statistics.
+- [x] Added dataset and chart type controls with responsive layout.
 
 

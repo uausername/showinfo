@@ -5,6 +5,7 @@
 ├── FILE_STRUCTURE.md
 ├── Sourses_info.md
 ├── UI_UX_PLAN.md
+├── README.md
 ├── package-lock.json
 ├── package.json
 ├── src
